@@ -9,7 +9,44 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Marca", "Index", "Marca")</li>
+                    <li>@Html.ActionLink("Paises", "Index", "Pais")</li>
+                    <li>@Html.ActionLink("Modelo", "Index", "Modelo")</li>
+                    <li>@Html.ActionLink("Usuario", "Index", "Usuario")</li>
+                    <li>@Html.ActionLink("Agencia", "Index", "Agencia")</li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -32,7 +69,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div>*@
     <div class="container body-content">
         @RenderBody()
         <hr />
