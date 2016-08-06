@@ -1,0 +1,5 @@
+C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto.DATOS\bin\Debug\eAuto.DATOS.dll.config
+C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto.DATOS\bin\Debug\eAuto.DATOS.dll
+C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto.DATOS\bin\Debug\eAuto.DATOS.pdb
+C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto.DATOS\obj\Debug\eAuto.DATOS.dll
+C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto.DATOS\obj\Debug\eAuto.DATOS.pdb
