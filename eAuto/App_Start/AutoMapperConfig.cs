@@ -29,6 +29,9 @@ namespace eAuto.App_Start
 
             Mapper.CreateMap<Models.Usuario, DATOS.Usuario>();
             Mapper.CreateMap<DATOS.Usuario, Models.Usuario>();
+
+            Mapper.CreateMap<Models.Agencia, DATOS.Agencia>();
+            Mapper.CreateMap<DATOS.Agencia, Models.Agencia>();
         }
     }
 
