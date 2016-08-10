@@ -9,82 +9,22 @@
 <div>
     <h4>AutoUsado</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Color.NombreColor)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Color.NombreColor)
-        </dd>
+    <div class="jumbotron">
+        <h2>@Html.DisplayNameFor(model => model.Marca.NombreMarca): @Html.DisplayFor(model => model.Marca.NombreMarca)</h2>
+        <p>@Html.DisplayNameFor(model => model.Modelo.NombreModelo): @Html.DisplayFor(model => model.Modelo.NombreModelo)</p>
+        <p>@Html.DisplayNameFor(model => model.Precio): @Html.DisplayFor(model => model.Precio)</p>
+        <p>@Html.DisplayNameFor(model => model.Descripcion): @Html.DisplayFor(model => model.Descripcion)</p>
+        <p>@Html.DisplayNameFor(model => model.Color.NombreColor): @Html.DisplayFor(model => model.Color.NombreColor)</p>
+        <p>@Html.DisplayNameFor(model => model.Km): @Html.DisplayFor(model => model.Km)</p>
+        <img src="~/Imagenes/AutosUsados/@Html.DisplayFor(model =>model.ImagenPath)" />
+        <br />
+        <br />
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.IdAutoUsado }, htmlAttributes: new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Back to List", "Index",  new { @class = "btn btn-success" })
+        </p>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EstadoAuto.NombreEstado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EstadoAuto.NombreEstado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Marca.NombreMarca)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Marca.NombreMarca)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Modelo.NombreModelo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Modelo.NombreModelo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IdUsuario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IdUsuario)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Km)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Km)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImagenPath)
-        </dt>
-
-        <dd>
-            <img src="~/Imagenes/AutosUsados/@Html.DisplayFor(model =>model.ImagenPath)" />
-        </dd>
-
-    </dl>
+    
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdAutoUsado }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

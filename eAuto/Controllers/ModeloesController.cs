@@ -17,7 +17,7 @@ namespace eAuto.Controllers
         // GET: Modeloes
         public ActionResult Index()
         {
-            return View(db.Modeloes.ToList());
+            return View(db.Modelos.ToList());
         }
 
         // GET: Modeloes/Details/5
@@ -27,7 +27,7 @@ namespace eAuto.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Modelo modelo = db.Modeloes.Find(id);
+            Modelo modelo = db.Modelos.Find(id);
             if (modelo == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace eAuto.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Modeloes.Add(modelo);
+                db.Modelos.Add(modelo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace eAuto.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Modelo modelo = db.Modeloes.Find(id);
+            Modelo modelo = db.Modelos.Find(id);
             if (modelo == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace eAuto.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Modelo modelo = db.Modeloes.Find(id);
+            Modelo modelo = db.Modelos.Find(id);
             if (modelo == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace eAuto.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Modelo modelo = db.Modeloes.Find(id);
-            db.Modeloes.Remove(modelo);
+            Modelo modelo = db.Modelos.Find(id);
+            db.Modelos.Remove(modelo);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

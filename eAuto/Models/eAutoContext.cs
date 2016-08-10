@@ -28,17 +28,17 @@ namespace eAuto.Models
 
         public System.Data.Entity.DbSet<eAuto.Models.Agencia> Agencias { get; set; }
 
-        public System.Data.Entity.DbSet<eAuto.Models.Modelo> Modeloes { get; set; }
+        public System.Data.Entity.DbSet<eAuto.Models.Modelo> Modelos { get; set; }
 
         public System.Data.Entity.DbSet<eAuto.Models.Marca> Marcas { get; set; }
 
-        public System.Data.Entity.DbSet<eAuto.Models.AutoNuevo> AutoNuevoes { get; set; }
+        public System.Data.Entity.DbSet<eAuto.Models.AutoNuevo> AutoNuevos { get; set; }
 
-        public System.Data.Entity.DbSet<eAuto.Models.EstadoAuto> EstadoAutoes { get; set; }
+        public System.Data.Entity.DbSet<eAuto.Models.EstadoAuto> EstadoAutos { get; set; }
 
         public System.Data.Entity.DbSet<eAuto.Models.Color> Colors { get; set; }
 
-        public System.Data.Entity.DbSet<eAuto.Models.AutoUsado> AutoUsadoes { get; set; }
+        public System.Data.Entity.DbSet<eAuto.Models.AutoUsado> AutoUsados { get; set; }
 
         public System.Data.Entity.DbSet<eAuto.Models.Pais> Pais { get; set; }
     }

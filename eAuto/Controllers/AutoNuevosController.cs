@@ -18,8 +18,8 @@ namespace eAuto.Controllers
         // GET: AutoNuevos
         public ActionResult Index()
         {
-            var autoNuevoes = db.AutoNuevoes.Include(a => a.Agencia).Include(a => a.Marca).Include(a => a.Modelo);
-            return View(autoNuevoes.ToList());
+            var autoNuevos = db.AutoNuevos.Include(a => a.Agencia).Include(a => a.Marca).Include(a => a.Modelo);
+            return View(autoNuevos.ToList());
         }
 
         // GET: AutoNuevos/Details/5
@@ -29,7 +29,7 @@ namespace eAuto.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AutoNuevo autoNuevo = db.AutoNuevoes.Find(id);
+            AutoNuevo autoNuevo = db.AutoNuevos.Find(id);
             if (autoNuevo == null)
             {
                 return HttpNotFound();
@@ -42,7 +42,7 @@ namespace eAuto.Controllers
         {
             ViewBag.IdAgencia = new SelectList(db.Agencias, "IdAgencia", "NombreAgencia");
             ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca");
-            ViewBag.IdModelo = new SelectList(db.Modeloes, "IdModelo", "NombreModelo");
+            ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo");
             return View();
         }
 
@@ -58,19 +58,18 @@ namespace eAuto.Controllers
                 if (FilePath != null && FilePath.ContentLength > 0)
                 {
                     var filename = Path.GetFileName(FilePath.FileName);
-                    string ext = filename.Split(char.Parse(".")).LastOrDefault();
-                    autoNuevo.ImagenPath = autoNuevo.IdAutoNuevo + "." + ext;
-                    var path = Path.Combine(Server.MapPath("~/Imagenes/AutosNuevos"), autoNuevo.IdAutoNuevo + "." + ext);
+                    var path = Path.Combine(Server.MapPath("~/Imagenes/AutosNuevos"), filename);
+                    autoNuevo.ImagenPath = filename;
                     FilePath.SaveAs(path);
                 }
-                db.AutoNuevoes.Add(autoNuevo);
+                db.AutoNuevos.Add(autoNuevo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.IdAgencia = new SelectList(db.Agencias, "IdAgencia", "NombreAgencia", autoNuevo.IdAgencia);
             ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", autoNuevo.IdMarca);
-            ViewBag.IdModelo = new SelectList(db.Modeloes, "IdModelo", "NombreModelo", autoNuevo.IdModelo);
+            ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo", autoNuevo.IdModelo);
             return View(autoNuevo);
         }
 
@@ -81,14 +80,14 @@ namespace eAuto.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AutoNuevo autoNuevo = db.AutoNuevoes.Find(id);
+            AutoNuevo autoNuevo = db.AutoNuevos.Find(id);
             if (autoNuevo == null)
             {
                 return HttpNotFound();
             }
             ViewBag.IdAgencia = new SelectList(db.Agencias, "IdAgencia", "NombreAgencia", autoNuevo.IdAgencia);
             ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", autoNuevo.IdMarca);
-            ViewBag.IdModelo = new SelectList(db.Modeloes, "IdModelo", "NombreModelo", autoNuevo.IdModelo);
+            ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo", autoNuevo.IdModelo);
             return View(autoNuevo);
         }
 
@@ -115,7 +114,7 @@ namespace eAuto.Controllers
             }
             ViewBag.IdAgencia = new SelectList(db.Agencias, "IdAgencia", "NombreAgencia", autoNuevo.IdAgencia);
             ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", autoNuevo.IdMarca);
-            ViewBag.IdModelo = new SelectList(db.Modeloes, "IdModelo", "NombreModelo", autoNuevo.IdModelo);
+            ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo", autoNuevo.IdModelo);
             return View(autoNuevo);
         }
 
@@ -126,7 +125,7 @@ namespace eAuto.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AutoNuevo autoNuevo = db.AutoNuevoes.Find(id);
+            AutoNuevo autoNuevo = db.AutoNuevos.Find(id);
             if (autoNuevo == null)
             {
                 return HttpNotFound();
@@ -139,8 +138,8 @@ namespace eAuto.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AutoNuevo autoNuevo = db.AutoNuevoes.Find(id);
-            db.AutoNuevoes.Remove(autoNuevo);
+            AutoNuevo autoNuevo = db.AutoNuevos.Find(id);
+            db.AutoNuevos.Remove(autoNuevo);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

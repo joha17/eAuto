@@ -17,7 +17,7 @@ namespace eAuto.Controllers
         // GET: EstadoAutos
         public ActionResult Index()
         {
-            return View(db.EstadoAutoes.ToList());
+            return View(db.EstadoAutos.ToList());
         }
 
         // GET: EstadoAutos/Details/5
@@ -27,7 +27,7 @@ namespace eAuto.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EstadoAuto estadoAuto = db.EstadoAutoes.Find(id);
+            EstadoAuto estadoAuto = db.EstadoAutos.Find(id);
             if (estadoAuto == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace eAuto.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.EstadoAutoes.Add(estadoAuto);
+                db.EstadoAutos.Add(estadoAuto);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace eAuto.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EstadoAuto estadoAuto = db.EstadoAutoes.Find(id);
+            EstadoAuto estadoAuto = db.EstadoAutos.Find(id);
             if (estadoAuto == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace eAuto.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EstadoAuto estadoAuto = db.EstadoAutoes.Find(id);
+            EstadoAuto estadoAuto = db.EstadoAutos.Find(id);
             if (estadoAuto == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace eAuto.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            EstadoAuto estadoAuto = db.EstadoAutoes.Find(id);
-            db.EstadoAutoes.Remove(estadoAuto);
+            EstadoAuto estadoAuto = db.EstadoAutos.Find(id);
+            db.EstadoAutos.Remove(estadoAuto);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

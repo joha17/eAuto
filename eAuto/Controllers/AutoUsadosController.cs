@@ -18,7 +18,7 @@ namespace eAuto.Controllers
         // GET: AutoUsados
         public ActionResult Index()
         {
-            var autoUsadoes = db.AutoUsadoes.Include(a => a.Color).Include(a => a.EstadoAuto).Include(a => a.Marca).Include(a => a.Modelo);
+            var autoUsadoes = db.AutoUsados.Include(a => a.Color).Include(a => a.EstadoAuto).Include(a => a.Marca).Include(a => a.Modelo);
             return View(autoUsadoes.ToList());
         }
 
@@ -29,7 +29,7 @@ namespace eAuto.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AutoUsado autoUsado = db.AutoUsadoes.Find(id);
+            AutoUsado autoUsado = db.AutoUsados.Find(id);
             if (autoUsado == null)
             {
                 return HttpNotFound();
@@ -41,9 +41,9 @@ namespace eAuto.Controllers
         public ActionResult Create()
         {
             ViewBag.IdColor = new SelectList(db.Colors, "IdColor", "NombreColor");
-            ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutoes, "IdEstadoAuto", "NombreEstado");
+            ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutos, "IdEstadoAuto", "NombreEstado");
             ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca");
-            ViewBag.IdModelo = new SelectList(db.Modeloes, "IdModelo", "NombreModelo");
+            ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo");
             return View();
         }
 
@@ -59,20 +59,19 @@ namespace eAuto.Controllers
                 if (FilePath != null && FilePath.ContentLength > 0)
                 {
                     var filename = Path.GetFileName(FilePath.FileName);
-                    string ext = filename.Split(char.Parse(".")).LastOrDefault();
-                    autoUsado.ImagenPath = autoUsado.IdAutoUsado + "." + ext;
-                    var path = Path.Combine(Server.MapPath("~/Imagenes/AutosUsados"), autoUsado.IdAutoUsado + "." + ext);
+                    var path = Path.Combine(Server.MapPath("~/Imagenes/AutosUsados"), filename);
+                    autoUsado.ImagenPath = filename;
                     FilePath.SaveAs(path);
                 }
-                db.AutoUsadoes.Add(autoUsado);
+                db.AutoUsados.Add(autoUsado);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.IdColor = new SelectList(db.Colors, "IdColor", "NombreColor", autoUsado.IdColor);
-            ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutoes, "IdEstadoAuto", "NombreEstado", autoUsado.IdEstadoAuto);
+            ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutos, "IdEstadoAuto", "NombreEstado", autoUsado.IdEstadoAuto);
             ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", autoUsado.IdMarca);
-            ViewBag.IdModelo = new SelectList(db.Modeloes, "IdModelo", "NombreModelo", autoUsado.IdModelo);
+            ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo", autoUsado.IdModelo);
             return View(autoUsado);
         }
 
@@ -83,15 +82,15 @@ namespace eAuto.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AutoUsado autoUsado = db.AutoUsadoes.Find(id);
+            AutoUsado autoUsado = db.AutoUsados.Find(id);
             if (autoUsado == null)
             {
                 return HttpNotFound();
             }
             ViewBag.IdColor = new SelectList(db.Colors, "IdColor", "NombreColor", autoUsado.IdColor);
-            ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutoes, "IdEstadoAuto", "NombreEstado", autoUsado.IdEstadoAuto);
+            ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutos, "IdEstadoAuto", "NombreEstado", autoUsado.IdEstadoAuto);
             ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", autoUsado.IdMarca);
-            ViewBag.IdModelo = new SelectList(db.Modeloes, "IdModelo", "NombreModelo", autoUsado.IdModelo);
+            ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo", autoUsado.IdModelo);
             return View(autoUsado);
         }
 
@@ -109,9 +108,9 @@ namespace eAuto.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.IdColor = new SelectList(db.Colors, "IdColor", "NombreColor", autoUsado.IdColor);
-            ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutoes, "IdEstadoAuto", "NombreEstado", autoUsado.IdEstadoAuto);
+            ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutos, "IdEstadoAuto", "NombreEstado", autoUsado.IdEstadoAuto);
             ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", autoUsado.IdMarca);
-            ViewBag.IdModelo = new SelectList(db.Modeloes, "IdModelo", "NombreModelo", autoUsado.IdModelo);
+            ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo", autoUsado.IdModelo);
             return View(autoUsado);
         }
 
@@ -122,7 +121,7 @@ namespace eAuto.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AutoUsado autoUsado = db.AutoUsadoes.Find(id);
+            AutoUsado autoUsado = db.AutoUsados.Find(id);
             if (autoUsado == null)
             {
                 return HttpNotFound();
@@ -135,8 +134,8 @@ namespace eAuto.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AutoUsado autoUsado = db.AutoUsadoes.Find(id);
-            db.AutoUsadoes.Remove(autoUsado);
+            AutoUsado autoUsado = db.AutoUsados.Find(id);
+            db.AutoUsados.Remove(autoUsado);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
