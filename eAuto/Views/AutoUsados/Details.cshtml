@@ -1,0 +1,90 @@
+﻿@model eAuto.Models.AutoUsado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AutoUsado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Color.NombreColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color.NombreColor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoAuto.NombreEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoAuto.NombreEstado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marca.NombreMarca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marca.NombreMarca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modelo.NombreModelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modelo.NombreModelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Km)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Km)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagenPath)
+        </dt>
+
+        <dd>
+            <img src="~/Imagenes/AutosUsados/@Html.DisplayFor(model =>model.ImagenPath)" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdAutoUsado }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

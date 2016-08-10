@@ -8,10 +8,14 @@ namespace eAuto.Models
 {
     public class Modelo
     {
-        [Required]
+        [Key]
         public int IdModelo { get; set; }
 
-        [Required]
+        [Display(Name = "Nombre")]
         public string NombreModelo { get; set; }
+
+        //Relaciones
+        public virtual ICollection<AutoNuevo> AutosNuevos { get; set; }
+        public virtual ICollection<AutoUsado> AutosUsados { get; set; }
     }
 }

@@ -1,0 +1,72 @@
+﻿@model eAuto.Models.AutoNuevo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AutoNuevo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Agencia.NombreAgencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agencia.NombreAgencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marca.NombreMarca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marca.NombreMarca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modelo.NombreModelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modelo.NombreModelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagenPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagenPath)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

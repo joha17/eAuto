@@ -1,73 +1,202 @@
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\ApplicationInsights.config
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\roslyn\csc.exe
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\roslyn\vbc.exe
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\roslyn\VBCSCompiler.exe
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\eAuto.dll.config
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\eAuto.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\eAuto.pdb
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Antlr3.Runtime.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\AutoMapper.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\eAuto.BL.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\eAuto.DATOS.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.Web.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.ApplicationInsights.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Newtonsoft.Json.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.Helpers.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.Mvc.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.Optimization.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.Razor.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.WebPages.Deployment.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.WebPages.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.WebPages.Razor.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\WebGrease.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\eAuto.DS.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\ServiceStack.OrmLite.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\ServiceStack.OrmLite.SqlServer.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\ServiceStack.Common.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\eAuto.BL.pdb
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\eAuto.DATOS.pdb
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\AutoMapper.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.Web.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.ApplicationInsights.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.Helpers.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.Mvc.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.Optimization.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.Razor.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.WebPages.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.WebPages.Deployment.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\System.Web.WebPages.Razor.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Antlr3.Runtime.pdb
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\Newtonsoft.Json.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\eAuto.DS.pdb
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\ServiceStack.Common.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\ServiceStack.Text.xml
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.Helpers.resources.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.Mvc.resources.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.Optimization.resources.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.Razor.resources.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.WebPages.resources.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.WebPages.Deployment.resources.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\obj\Debug\eAuto.csprojResolveAssemblyReference.cache
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\obj\Debug\eAuto.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\obj\Debug\eAuto.pdb
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\ApplicationInsights.config
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\roslyn\csc.exe
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\roslyn\System.Collections.Immutable.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\roslyn\vbc.exe
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\roslyn\VBCSCompiler.exe
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\roslyn\VBCSCompiler.exe.config
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\eAuto.dll.config
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\eAuto.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\eAuto.pdb
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Antlr3.Runtime.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\EntityFramework.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\EntityFramework.SqlServer.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.Web.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.WindowsServer.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.ApplicationInsights.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.Google.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Web.Infrastructure.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Newtonsoft.Json.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Owin.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.Helpers.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.Mvc.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.Optimization.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.Razor.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.WebPages.Deployment.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.WebPages.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.WebPages.Razor.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\WebGrease.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.Web.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AI.WindowsServer.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.ApplicationInsights.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.Helpers.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.Mvc.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.Optimization.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.Razor.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.WebPages.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.WebPages.Deployment.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\System.Web.WebPages.Razor.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Antlr3.Runtime.pdb
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Newtonsoft.Json.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\EntityFramework.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\EntityFramework.SqlServer.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.Google.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.Helpers.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.Mvc.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.Optimization.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.Razor.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.WebPages.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.WebPages.Deployment.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\System.Web.WebPages.Razor.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\EntityFramework.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\EntityFramework.SqlServer.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\Microsoft.Owin.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\Microsoft.Owin.Security.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\Microsoft.Owin.Security.Google.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\obj\Debug\eAuto.csprojResolveAssemblyReference.cache
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\obj\Debug\eAuto.dll
+c:\users\cerva\documents\visual studio 2015\Projects\eAuto\eAuto\obj\Debug\eAuto.pdb
+J:\U\Progra V\eAuto\eAuto\bin\ApplicationInsights.config
+J:\U\Progra V\eAuto\eAuto\bin\roslyn\csc.exe
+J:\U\Progra V\eAuto\eAuto\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+J:\U\Progra V\eAuto\eAuto\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+J:\U\Progra V\eAuto\eAuto\bin\roslyn\Microsoft.CodeAnalysis.dll
+J:\U\Progra V\eAuto\eAuto\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+J:\U\Progra V\eAuto\eAuto\bin\roslyn\Microsoft.CSharp.Core.targets
+J:\U\Progra V\eAuto\eAuto\bin\roslyn\Microsoft.VisualBasic.Core.targets
+J:\U\Progra V\eAuto\eAuto\bin\roslyn\System.Collections.Immutable.dll
+J:\U\Progra V\eAuto\eAuto\bin\roslyn\System.Reflection.Metadata.dll
+J:\U\Progra V\eAuto\eAuto\bin\roslyn\vbc.exe
+J:\U\Progra V\eAuto\eAuto\bin\roslyn\VBCSCompiler.exe
+J:\U\Progra V\eAuto\eAuto\bin\roslyn\VBCSCompiler.exe.config
+J:\U\Progra V\eAuto\eAuto\bin\eAuto.dll.config
+J:\U\Progra V\eAuto\eAuto\bin\eAuto.dll
+J:\U\Progra V\eAuto\eAuto\bin\eAuto.pdb
+J:\U\Progra V\eAuto\eAuto\bin\Antlr3.Runtime.dll
+J:\U\Progra V\eAuto\eAuto\bin\EntityFramework.dll
+J:\U\Progra V\eAuto\eAuto\bin\EntityFramework.SqlServer.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AI.Agent.Intercept.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AI.DependencyCollector.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AI.PerfCounterCollector.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AI.ServerTelemetryChannel.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AI.Web.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AI.WindowsServer.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.ApplicationInsights.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AspNet.Identity.Core.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AspNet.Identity.Owin.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Host.SystemWeb.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.Cookies.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.Facebook.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.Google.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.OAuth.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.Twitter.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Web.Infrastructure.dll
+J:\U\Progra V\eAuto\eAuto\bin\Newtonsoft.Json.dll
+J:\U\Progra V\eAuto\eAuto\bin\Owin.dll
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.Helpers.dll
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.Mvc.dll
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.Optimization.dll
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.Razor.dll
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.WebPages.Deployment.dll
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.WebPages.dll
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.WebPages.Razor.dll
+J:\U\Progra V\eAuto\eAuto\bin\WebGrease.dll
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AI.DependencyCollector.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AI.ServerTelemetryChannel.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AI.Web.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AI.WindowsServer.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.ApplicationInsights.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.Helpers.xml
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.Mvc.xml
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.Optimization.xml
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.Razor.xml
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.WebPages.xml
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.WebPages.Deployment.xml
+J:\U\Progra V\eAuto\eAuto\bin\System.Web.WebPages.Razor.xml
+J:\U\Progra V\eAuto\eAuto\bin\Antlr3.Runtime.pdb
+J:\U\Progra V\eAuto\eAuto\bin\Newtonsoft.Json.xml
+J:\U\Progra V\eAuto\eAuto\bin\EntityFramework.xml
+J:\U\Progra V\eAuto\eAuto\bin\EntityFramework.SqlServer.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AspNet.Identity.Core.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AspNet.Identity.Owin.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Host.SystemWeb.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.Facebook.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.Cookies.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.OAuth.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.Google.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.Twitter.xml
+J:\U\Progra V\eAuto\eAuto\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+J:\U\Progra V\eAuto\eAuto\bin\es\System.Web.Helpers.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\System.Web.Mvc.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\System.Web.Optimization.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\System.Web.Razor.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\System.Web.WebPages.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\System.Web.WebPages.Deployment.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\System.Web.WebPages.Razor.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\EntityFramework.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\EntityFramework.SqlServer.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\Microsoft.Owin.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\Microsoft.Owin.Security.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\Microsoft.Owin.Security.Google.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+J:\U\Progra V\eAuto\eAuto\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+J:\U\Progra V\eAuto\eAuto\obj\Debug\eAuto.csprojResolveAssemblyReference.cache
+J:\U\Progra V\eAuto\eAuto\obj\Debug\eAuto.dll
+J:\U\Progra V\eAuto\eAuto\obj\Debug\eAuto.pdb

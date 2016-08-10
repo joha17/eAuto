@@ -1,6 +1,6 @@
-﻿using eAuto.App_Start;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,11 +13,12 @@ namespace eAuto
     {
         protected void Application_Start()
         {
+            //Esta linea nos permite correr la app sin problemas al hacer cambios a la BD
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Models.eAutoContext, Migrations.Configuration>());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            AutoMapperConfig.Configure();
         }
     }
 }

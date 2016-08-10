@@ -8,11 +8,11 @@ namespace eAuto.Models
 {
     public class Pais
     {
-        [Required]
-        public int IdPais  { get; set; }
-
-        [Required]
+        [Key]
+        public int IdPais { get; set; }
         public string NombrePais { get; set; }
-        
+
+        //Relaciones
+        public virtual ICollection<Marca> Marcas { get; set; }
     }
 }

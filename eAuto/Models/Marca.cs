@@ -1,8 +1,6 @@
-﻿using ServiceStack.DataAnnotations;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -11,13 +9,17 @@ namespace eAuto.Models
     public class Marca
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdMarca { get; set; }
 
-        [ServiceStack.DataAnnotations.Required]
+        [Display(Name = "Nombre")]
         public string NombreMarca { get; set; }
 
-        public string NombrePais { get; set; }
-
+        [Display(Name = "Pais Origen")]
+        public int IdPais { get; set; }
+        
+        //Relaciones
+        public virtual ICollection<AutoNuevo> AutosNuevos { get; set; }
+        public virtual ICollection<AutoUsado> AutosUsados { get; set; }
+        public virtual Pais Pais { get; set; }
     }
 }

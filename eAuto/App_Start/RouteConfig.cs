@@ -12,13 +12,7 @@ namespace eAuto
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.MapRoute(
-                name: "Marca",
-                url: "Marca",
-                defaults: new { controller = "Marca", action = "Index" }
-            );
 
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
