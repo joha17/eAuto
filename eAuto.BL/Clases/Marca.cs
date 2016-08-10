@@ -39,5 +39,11 @@ namespace eAuto.BL.Clases
             DS.Interfaces.IMarca marca = new DS.Clases.Marca();
             return marca.ListarMarcas();
         }
+
+        public List<DATOS.Marca> ListarMarcasPaises(string nombrepais)
+        {
+            DS.Interfaces.IMarca marca = new DS.Clases.Marca();
+            return marca.ListarMarcasPaises(nombrepais);
+        }
     }
 }

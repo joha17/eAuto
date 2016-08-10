@@ -40,8 +40,6 @@ C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\eAuto.DS.dl
 C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\ServiceStack.OrmLite.dll
 C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\ServiceStack.OrmLite.SqlServer.dll
 C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\ServiceStack.Common.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\ServiceStack.Interfaces.dll
-C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\ServiceStack.Text.dll
 C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\eAuto.BL.pdb
 C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\eAuto.DATOS.pdb
 C:\Users\cerva\Documents\Visual Studio 2015\Projects\eAuto\eAuto\bin\AutoMapper.xml

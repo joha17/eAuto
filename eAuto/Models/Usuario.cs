@@ -8,7 +8,7 @@ namespace eAuto.Models
 {
     public class Usuario
     {
-        [Required]
+        [Key]
         public int IdUsuario { get; set; }
 
         [Required]

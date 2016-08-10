@@ -1,6 +1,8 @@
-﻿using System;
+﻿using ServiceStack.DataAnnotations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -8,20 +10,14 @@ namespace eAuto.Models
 {
     public class Marca
     {
-        [Required]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdMarca { get; set; }
 
-        [Required]
+        [ServiceStack.DataAnnotations.Required]
         public string NombreMarca { get; set; }
 
-        
-        public int IdPais { get; set; }
+        public string NombrePais { get; set; }
 
-        public Pais PaisMarca { get; set; }
-
-        public enum Pais
-        {
-            Alemania, Francia
-        }
     }
 }

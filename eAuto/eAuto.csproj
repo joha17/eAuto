@@ -81,6 +81,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.0.60.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -209,13 +217,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Marca\Index.cshtml" />
-    <Content Include="Views\Marca\Details.cshtml" />
     <Content Include="Views\Pais\Index.cshtml" />
     <Content Include="Views\Pais\Details.cshtml" />
     <Content Include="Views\Pais\Edit.cshtml" />
     <Content Include="Views\Pais\Create.cshtml" />
-    <Content Include="Views\Marca\Create.cshtml" />
     <Content Include="Views\Modelo\Index.cshtml" />
     <Content Include="Views\Modelo\Details.cshtml" />
     <Content Include="Views\Modelo\Create.cshtml" />
@@ -228,6 +233,8 @@
     <Content Include="Views\Agencia\Details.cshtml" />
     <Content Include="Views\Agencia\Create.cshtml" />
     <Content Include="Views\Agencia\Edit.cshtml" />
+    <Content Include="Views\Marca\Index.cshtml" />
+    <Content Include="Views\Marca\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -9,6 +9,7 @@ namespace eAuto.BL.Interfaces
     public interface IMarca
     {
         List<DATOS.Marca> ListarMarcas();
+        List<DATOS.Marca> ListarMarcasPaises(string nombrepais);
         DATOS.Marca BuscarMarca(int idmarca);
         void InsertarMarca(DATOS.Marca marca);
         void ActualizarMarca(DATOS.Marca marca);

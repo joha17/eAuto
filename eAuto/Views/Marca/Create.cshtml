@@ -1,4 +1,6 @@
 ﻿@model eAuto.Models.Marca
+@using eAuto.BL.Interfaces
+@using eAuto.BL.Clases
 
 @{
     ViewBag.Title = "Create";
@@ -15,13 +17,13 @@
         <h4>Marca</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.IdMarca, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.IdMarca, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.IdMarca, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.NombreMarca, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -32,10 +34,14 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IdPais, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NombrePais, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.IdPais, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.IdPais, "", new { @class = "text-danger" })
+                @*@Html.EditorFor(model => model.NombrePais, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(m => m.NombrePais, "", new { @class = "text-danger" })
+                
+                @Html.EnumDropDownListFor(m => m.NombrePais, "Seleccion el pais", new { @class = "form-control" })
+
+
             </div>
         </div>
 
@@ -45,7 +51,7 @@
             </div>
         </div>
     </div>
-}
+                    }
 
 <div>
     @Html.ActionLink("Back to List", "Index")

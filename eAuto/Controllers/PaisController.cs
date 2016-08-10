@@ -51,10 +51,19 @@ namespace eAuto.Controllers
         // GET: Pais/Edit/5
         public ActionResult Edit(int id)
         {
-            BL.Interfaces.IPais pai = new BL.Clases.Pais();
-            var objetoPais = pai.BuscarPais(id);
-            var pais = Mapper.Map<Models.Pais>(objetoPais);
-            return View(pais);
+            try
+            {
+                BL.Interfaces.IPais pai = new BL.Clases.Pais();
+                var objetoPais = pai.BuscarPais(id);
+                var pais = Mapper.Map<Models.Pais>(objetoPais);
+                return View(pais);
+            }
+            catch 
+            {
+
+                return RedirectToAction("~/Views/Shared/Error");
+            }
+           
         }
 
         // POST: Pais/Edit/5

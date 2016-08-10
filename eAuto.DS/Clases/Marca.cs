@@ -47,5 +47,12 @@ namespace eAuto.DS.Clases
             var db = conexion.Open();
             return db.Select<DATOS.Marca>();
         }
+
+        public List<DATOS.Marca> ListarMarcasPaises(string nombrepais)
+        {
+            var db = conexion.Open();
+            List<DATOS.Marca> listapaises = db.Select<DATOS.Marca>(x => x.NombrePais == nombrepais);
+            return listapaises;
+        }
     }
 }
