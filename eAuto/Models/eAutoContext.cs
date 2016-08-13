@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Web;
 
 namespace eAuto.Models
 {
@@ -26,20 +22,22 @@ namespace eAuto.Models
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
 
-        public System.Data.Entity.DbSet<eAuto.Models.Agencia> Agencias { get; set; }
+        public DbSet<Agencia> Agencias { get; set; }
 
-        public System.Data.Entity.DbSet<eAuto.Models.Modelo> Modelos { get; set; }
+        public DbSet<Modelo> Modelos { get; set; }
 
-        public System.Data.Entity.DbSet<eAuto.Models.Marca> Marcas { get; set; }
+        public DbSet<Marca> Marcas { get; set; }
 
-        public System.Data.Entity.DbSet<eAuto.Models.AutoNuevo> AutoNuevos { get; set; }
+        public DbSet<AutoNuevo> AutoNuevos { get; set; }
 
-        public System.Data.Entity.DbSet<eAuto.Models.EstadoAuto> EstadoAutos { get; set; }
+        public DbSet<EstadoAuto> EstadoAutos { get; set; }
 
-        public System.Data.Entity.DbSet<eAuto.Models.Color> Colors { get; set; }
+        public DbSet<Color> Colors { get; set; }
 
-        public System.Data.Entity.DbSet<eAuto.Models.AutoUsado> AutoUsados { get; set; }
+        public DbSet<AutoUsado> AutoUsados { get; set; }
 
-        public System.Data.Entity.DbSet<eAuto.Models.Pais> Pais { get; set; }
+        public DbSet<Pais> Pais { get; set; }
+
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }
