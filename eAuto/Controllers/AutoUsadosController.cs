@@ -63,6 +63,7 @@ namespace eAuto.Controllers
                     autoUsado.ImagenPath = filename;
                     FilePath.SaveAs(path);
                 }
+                Session["NombreUsuario"] = 
                 db.AutoUsados.Add(autoUsado);
                 db.SaveChanges();
                 return RedirectToAction("Index");

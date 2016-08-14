@@ -48,7 +48,7 @@ namespace eAuto.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdMarca,NombreMarca,IdPais")] Marca marca)
+        public ActionResult Create([Bind(Include = "IdMarca,NombreMarca,IdPais")] Marca marca, string nombre)
         {
             if (ModelState.IsValid)
             {

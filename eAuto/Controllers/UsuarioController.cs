@@ -13,7 +13,7 @@ namespace eAuto.Controllers
     public class UsuarioController : Controller
     {
         private eAutoContext db = new eAutoContext();
-        public static string Llave = "jskruwiqhendmsud";
+        
 
         // GET: Usuario
         public ActionResult Index()
@@ -28,18 +28,22 @@ namespace eAuto.Controllers
         }
 
         [HttpPost]
-        public ActionResult Registro(Usuario usuario, string contrasena)
+        [ValidateAntiForgeryToken]
+        public ActionResult Registro([Bind(Include = "IdUsuario,Nombre,Apellidos,Telefono,Direccion,Admin,Correo,Contrasena,ConfirmeContrasena")]Usuario usuario, string contrasena)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    usuario.Contrasena = Encriptar(contrasena, Llave);
-                    db.Usuarios.Add(usuario);
-                    db.SaveChanges();
-                    //return RedirectToAction("Index");
-                    ModelState.Clear();
-                    ViewBag.Message = usuario.Nombre + " " + usuario.Apellidos + " te has registrado satisfactoriamente";
+                    if (ModelState.IsValid)
+                    {
+                        db.Usuarios.Add(usuario);
+                        db.SaveChanges();
+                        //return RedirectToAction("Index");
+                        ModelState.Clear();
+                        ViewBag.Message = usuario.Nombre + " " + usuario.Apellidos + " te has registrado satisfactoriamente";
+                    }
+                    
                 }
                 catch (Exception ex)
                 {
@@ -63,6 +67,7 @@ namespace eAuto.Controllers
             {
                 Session["IdUsuario"] = usr.IdUsuario.ToString();
                 Session["Correo"] = usr.Correo.ToString();
+                Session["Admin"] = usr.Admin;
                 return RedirectToAction("LoggedIn");
             }
             else
@@ -89,36 +94,6 @@ namespace eAuto.Controllers
             FormsAuthentication.SignOut();
             Session.Abandon(); // it will clear the session at the end of request
             return RedirectToAction("Index", "AutoUsados");
-        }
-
-        public static string Decriptar(string contra, string llave)
-        {
-            byte[] keyArray = Encoding.UTF8.GetBytes(llave);
-            byte[] encriptar = Convert.FromBase64String(contra);
-
-            var tdes = new TripleDESCryptoServiceProvider();
-            tdes.Key = keyArray;
-            tdes.Mode = CipherMode.ECB;
-            tdes.Padding = PaddingMode.PKCS7;
-
-            ICryptoTransform cTransform = tdes.CreateDecryptor();
-            byte[] resultado = cTransform.TransformFinalBlock(encriptar, 0, encriptar.Length);
-            return Encoding.UTF8.GetString(resultado);
-        }
-
-        public static string Encriptar(string contra, string llave)
-        {
-            byte[] keyArray = Encoding.UTF8.GetBytes(llave);
-            byte[] encriptar = Encoding.UTF8.GetBytes(contra);
-
-            var tdes = new TripleDESCryptoServiceProvider();
-            tdes.Key = keyArray;
-            tdes.Mode = CipherMode.ECB;
-            tdes.Padding = PaddingMode.PKCS7;
-
-            ICryptoTransform cTransform = tdes.CreateEncryptor();
-            byte[] resultado = cTransform.TransformFinalBlock(encriptar, 0, encriptar.Length);
-            return Convert.ToBase64String(resultado, 0, resultado.Length);
         }
     }
 }
