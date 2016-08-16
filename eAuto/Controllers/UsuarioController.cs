@@ -1,7 +1,9 @@
 ﻿using eAuto.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
@@ -14,7 +16,6 @@ namespace eAuto.Controllers
     {
         private eAutoContext db = new eAutoContext();
         
-
         // GET: Usuario
         public ActionResult Index()
         {
@@ -39,9 +40,8 @@ namespace eAuto.Controllers
                     {
                         db.Usuarios.Add(usuario);
                         db.SaveChanges();
-                        //return RedirectToAction("Index");
-                        ModelState.Clear();
-                        ViewBag.Message = usuario.Nombre + " " + usuario.Apellidos + " te has registrado satisfactoriamente";
+                        return RedirectToAction("Login");
+                        //ViewBag.Message = usuario.Nombre + " " + usuario.Apellidos + " te has registrado satisfactoriamente";
                     }
                     
                 }
@@ -87,6 +87,29 @@ namespace eAuto.Controllers
             {
                 return RedirectToAction("Login");
             }
+        }
+
+        // GET: Paises/Edit/5
+        public ActionResult Edit()
+        {
+        
+            return View();
+        }
+
+        // POST: Paises/Edit/5
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "IdUsuario,Nombre,Apellidos,Telefono,Direccion,Admin,Correo,Contrasena,ConfirmeContrasena")] Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(usuario).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(usuario);
         }
 
         public ActionResult CerrarSesion()

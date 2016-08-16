@@ -4,93 +4,105 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+@if ((bool)Session["Admin"] == true)
+{
+    <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>AutoUsado</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Color.NombreColor)
-        </dt>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>AutoUsado</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Color.NombreColor)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Color.NombreColor)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Color.NombreColor)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EstadoAuto.NombreEstado)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.EstadoAuto.NombreEstado)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EstadoAuto.NombreEstado)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.EstadoAuto.NombreEstado)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Marca.NombreMarca)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Marca.NombreMarca)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Marca.NombreMarca)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Marca.NombreMarca)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Modelo.NombreModelo)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Modelo.NombreModelo)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Modelo.NombreModelo)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Modelo.NombreModelo)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IdUsuario)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Usuario.Nombre)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IdUsuario)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Usuario.Nombre)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Precio)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Precio)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Km)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Km)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Km)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Km)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ImagenPath)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ImagenPath)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ImagenPath)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ImagenPath)
+            </dd>
 
-    </dl>
+        </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+
+}
+
+else
+{
+    <h2>No estas autorizado para eliminar este anuncio.</h2>
+    <p>@Html.ActionLink("Back to List", "Index")</p>
+}
+

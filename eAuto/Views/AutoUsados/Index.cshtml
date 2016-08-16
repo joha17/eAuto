@@ -1,19 +1,36 @@
-﻿@model IEnumerable<eAuto.Models.AutoUsado>
+﻿@model PagedList.IPagedList<eAuto.Models.AutoUsado>
+
+@using PagedList.Mvc
 
 @{
     ViewBag.Title = "Index";
     int counter = 0;
 }
 
-<h2>Index</h2>
+<h2>Autos Usados</h2>
+
+@if (Session["IdUsuario"] != null)
+{
+    <a>
+        @Html.ActionLink("Agregar Anuncio", "Create", null, new { @class = "btn btn-primary" })
+    </a>
+}
 
 
-<p>
-    @Html.ActionLink("Create New", "Create", new { @class = "btn btn-primary" })
-</p>
+@using (Html.BeginForm("Index", "AutoUsados", FormMethod.Get))
+{
 
+    <div class="form-group">
+        <label class="control-label">Busque su auto: </label>
+        <div class="input-group">
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Buscar</button>
+            </span>
+        </div>
+    </div>
 
-
+}
 
 <div class="row">
     @foreach (var article in Model)
@@ -21,8 +38,8 @@
         if (counter != 0 && counter % 3 == 0)
         {
             @:</div>
-        
-        @:<div class="row">
+
+            @:<div class="row">
     }
 
         <div class="col-md-4">
@@ -30,14 +47,15 @@
                 <img src="~/Imagenes/AutosUsados/@article.ImagenPath" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
                 <div class="caption">
                     <h3 id="thumbnail-label">Marca: @article.Marca.NombreMarca</h3>
-                    <p>@Html.DisplayNameFor(model => model.Modelo.NombreModelo): @article.Modelo.NombreModelo</p>
-                    <p>@Html.DisplayNameFor(model => model.Precio): $@article.Precio</p>
-                    <p>@Html.DisplayNameFor(model => model.EstadoAuto.NombreEstado): @article.EstadoAuto.NombreEstado</p>
-                    <p>
-                        @Html.ActionLink("Edit", "Edit", new { id = article.IdAutoUsado }, htmlAttributes: new { @class = "btn btn-warning" }) 
-                        @Html.ActionLink("Details", "Details", new { id = article.IdAutoUsado }, htmlAttributes: new { @class = "btn btn-success" }) 
-                        @Html.ActionLink("Delete", "Delete", new { id = article.IdAutoUsado }, htmlAttributes: new { @class = "btn btn-danger" })
-                    </p>
+                    <strong>Modelo</strong><p>@article.Modelo.NombreModelo</p>
+                    <strong>Precio</strong><p>@article.Precio</p>
+                    <strong>Descripcion: </strong><p>@article.Descripcion</p>
+                    @if (Session["IdUsuario"] != null)
+                    {
+                        <a>@Html.ActionLink("Eliminar", "Delete", new { id = article.IdAutoUsado }, new { @class = "btn btn-danger" })</a>
+                        <a>@Html.ActionLink("Editar", "Edit", new { id = article.IdAutoUsado }, new { @class = "btn btn-warning" })</a>
+                    }
+                        <a>@Html.ActionLink("Ver", "Details", new { id = article.IdAutoUsado }, new { @class = "btn btn-success" })</a>
                 </div>
             </div>
         </div>
@@ -45,4 +63,10 @@
         counter++;
     }
 </div>
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
 

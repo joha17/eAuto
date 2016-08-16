@@ -37,6 +37,8 @@ namespace eAuto.Models
         [DataType(DataType.Password)]
         public string ConfirmeContrasena { get; set; }
 
+        public virtual ICollection<AutoUsado> AutoUsados { get; set; }
+
         public Usuario()
         {
             Admin = false;

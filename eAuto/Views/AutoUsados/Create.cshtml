@@ -1,17 +1,19 @@
 ﻿@model eAuto.Models.AutoUsado
 
-@{
+@if (Session["IdUsuario"] != null)
+{
+
     ViewBag.Title = "Create";
-}
+
 
 <h2>Create</h2>
 
 
-@using (Html.BeginForm("Create", "AutoUsados", null, FormMethod.Post,
-                              new { enctype = "multipart/form-data" })) 
-{
+    using (Html.BeginForm("Create", "AutoUsados", null, FormMethod.Post,
+                                          new { enctype = "multipart/form-data" }))
+    {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>AutoUsado</h4>
         <hr />
@@ -32,13 +34,8 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.IdUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.IdUsuario, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.IdUsuario, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                @Html.Hidden("IdUsuario", Session["IdUsuario"])
+           
 
         <div class="form-group">
             @Html.LabelFor(model => model.IdEstadoAuto, "IdEstadoAuto", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -100,6 +97,12 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+}
+else
+{
+    <h3>Debes registrarte para crear un anuncio.</h3>
+    <p>
+        @Html.ActionLink("Iniciar Sesion", "Login", "Usuario")
+        @Html.ActionLink("Registrese", "Registro", "Usuario")
+    </p>
 }

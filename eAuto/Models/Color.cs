@@ -11,6 +11,7 @@ namespace eAuto.Models
         [Key]
         public int IdColor { get; set; }
 
+        [Display(Name = "Color")]
         public string NombreColor { get; set; }
 
         //Relaciones

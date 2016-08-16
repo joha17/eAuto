@@ -2,62 +2,43 @@
 
 @{
     ViewBag.Title = "Index";
+    int counter = 0;
 }
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Agencia.NombreAgencia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Marca.NombreMarca)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Modelo.NombreModelo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IdUsuario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImagenPath)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Agencia.NombreAgencia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Marca.NombreMarca)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Modelo.NombreModelo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdUsuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImagenPath)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdAutoNuevo }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdAutoNuevo }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdAutoNuevo })
-        </td>
-    </tr>
+@if (Session["IdUsuario"] != null)
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
 }
 
-</table>
+
+<div class="row">
+    @foreach (var article in Model)
+    {
+        if (counter != 0 && counter % 4 == 0)
+        {
+            @:</div>
+            @:<div class="row">
+    }
+
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="~/Imagenes/AutosNuevos/@article.ImagenPath" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
+                <div class="caption">
+                    <h3 id="thumbnail-label">@article.Marca.NombreMarca</h3>
+                    <p>@article.Modelo.NombreModelo</p>
+                    <p>@article.Descripcion</p>
+                    <a>@Html.ActionLink("Edit", "Edit", new { id = article.IdAutoNuevo })</a>
+                    <a>@Html.ActionLink("Details", "Details", new { id = article.IdAutoNuevo })</a>
+                    <a>@Html.ActionLink("Delete", "Delete", new { id = article.IdAutoNuevo })</a>
+
+                </div>
+            </div>
+        </div>
+
+        counter++;
+    }
+</div>

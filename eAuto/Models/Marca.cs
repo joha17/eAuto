@@ -11,7 +11,7 @@ namespace eAuto.Models
         [Key]
         public int IdMarca { get; set; }
 
-        [Display(Name = "Nombre")]
+        [Display(Name = "Marca")]
         public string NombreMarca { get; set; }
 
         [Display(Name = "Pais Origen")]

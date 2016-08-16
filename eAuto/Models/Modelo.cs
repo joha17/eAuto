@@ -11,7 +11,7 @@ namespace eAuto.Models
         [Key]
         public int IdModelo { get; set; }
 
-        [Display(Name = "Nombre")]
+        [Display(Name = "Modelo")]
         public string NombreModelo { get; set; }
 
         //Relaciones

@@ -4,30 +4,26 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-   
-<div>
-    <h4>AutoUsado</h4>
-    <hr />
-
-    <div class="jumbotron">
-        <h2>@Html.DisplayNameFor(model => model.Marca.NombreMarca): @Html.DisplayFor(model => model.Marca.NombreMarca)</h2>
-        <p>@Html.DisplayNameFor(model => model.Modelo.NombreModelo): @Html.DisplayFor(model => model.Modelo.NombreModelo)</p>
-        <p>@Html.DisplayNameFor(model => model.Precio): @Html.DisplayFor(model => model.Precio)</p>
-        <p>@Html.DisplayNameFor(model => model.Descripcion): @Html.DisplayFor(model => model.Descripcion)</p>
-        <p>@Html.DisplayNameFor(model => model.Color.NombreColor): @Html.DisplayFor(model => model.Color.NombreColor)</p>
-        <p>@Html.DisplayNameFor(model => model.Km): @Html.DisplayFor(model => model.Km)</p>
+<div class="jumbotron">
+    <div class="container">
+        <h2>Marca: @Html.DisplayFor(model => model.Marca.NombreMarca)</h2>
+        <br />
         <img src="~/Imagenes/AutosUsados/@Html.DisplayFor(model =>model.ImagenPath)" />
-        <p>Dueño: @Session["Correo"].ToString()</p>
-
         <br />
+        <strong>@Html.DisplayNameFor(model => model.Modelo.NombreModelo): </strong><p> @Html.DisplayFor(model => model.Modelo.NombreModelo)</p>
+        <strong>@Html.DisplayNameFor(model => model.Precio): </strong><p> @Html.DisplayFor(model => model.Precio)</p>
+        <strong>@Html.DisplayNameFor(model => model.EstadoAuto.NombreEstado): </strong><p>@Html.DisplayFor(model => model.EstadoAuto.NombreEstado)</p>
+        <strong>@Html.DisplayNameFor(model => model.Color.NombreColor)</strong><p>@Html.DisplayFor(model => model.Color.NombreColor)</p>
+        <strong>@Html.DisplayNameFor(model => model.Descripcion): </strong><p> @Html.DisplayFor(model => model.Descripcion)</p>
+        <strong>@Html.DisplayNameFor(model => model.Km): </strong><p> @Html.DisplayFor(model => model.Km)</p>
+        <strong>Publicado: </strong><p> @Html.DisplayFor(model => model.FechaCreacion)</p>
+        <h2>Informacion del Vendedor</h2>
+        <strong>@Html.DisplayNameFor(model => model.Usuario.Nombre): </strong><p> @Html.DisplayFor(model => model.Usuario.Nombre)</p>
+        <strong>@Html.DisplayNameFor(model => model.Usuario.Apellidos): </strong><p> @Html.DisplayFor(model => model.Usuario.Apellidos)</p>
+        <strong>@Html.DisplayNameFor(model => model.Usuario.Telefono): </strong><p> @Html.DisplayFor(model => model.Usuario.Telefono)</p>
         <br />
-        <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.IdAutoUsado }, htmlAttributes: new { @class = "btn btn-warning" }) |
-            @Html.ActionLink("Back to List", "Index",  new { @class = "btn btn-success" })
-        </p>
+            <a>@Html.ActionLink("Edit", "Edit", new { id = Model.IdAutoUsado }, new { @class = "btn btn-warning"})</a>
+            <a>@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })</a>
     </div>
-
-    
 </div>

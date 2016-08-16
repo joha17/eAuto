@@ -19,6 +19,7 @@ namespace eAuto.Models
 
         public int IdAgencia { get; set; }
 
+        [Display(Name = "Descripción")]
         public string Descripcion { get; set; }
 
         public string ImagenPath { get; set; }

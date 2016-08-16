@@ -10,7 +10,7 @@ namespace eAuto.Models
     {
         [Key]
         public int IdAutoUsado  { get; set; }
-
+        
         public int IdMarca { get; set; }
 
         public int IdModelo { get; set; }
@@ -24,8 +24,10 @@ namespace eAuto.Models
         [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
         public decimal Precio { get; set; }
 
+        [Display(Name = "Descripción")]
         public string Descripcion { get; set; }
 
+        [Display(Name = "Kilometraje")]
         public string Km { get; set; }
 
         public string ImagenPath { get; set; }
@@ -46,5 +48,7 @@ namespace eAuto.Models
         public virtual EstadoAuto EstadoAuto { get; set; }
 
         public virtual Color Color { get; set; }
+
+        public virtual Usuario Usuario { get; set; }
     }
 }

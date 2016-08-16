@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using eAuto.Models;
 using System.IO;
+using System;
+using PagedList;
 
 namespace eAuto.Controllers
 {
@@ -16,10 +15,50 @@ namespace eAuto.Controllers
         private eAutoContext db = new eAutoContext();
 
         // GET: AutoUsados
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            var autoUsadoes = db.AutoUsados.Include(a => a.Color).Include(a => a.EstadoAuto).Include(a => a.Marca).Include(a => a.Modelo);
-            return View(autoUsadoes.ToList());
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var autoUsados = from s in db.AutoUsados
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                autoUsados = autoUsados.Where(s => s.Marca.NombreMarca.Contains(searchString)
+                                       || s.Modelo.NombreModelo.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    autoUsados = autoUsados.OrderByDescending(s => s.Marca.NombreMarca);
+                    break;
+                case "Date":
+                    autoUsados = autoUsados.OrderBy(s => s.FechaCreacion);
+                    break;
+                case "date_desc":
+                    autoUsados = autoUsados.OrderByDescending(s => s.FechaCreacion);
+                    break;
+                default:  // Name ascending 
+                    autoUsados = autoUsados.OrderBy(s => s.Marca.NombreMarca);
+                    break;
+            }
+
+            int pageSize = 12;
+            int pageNumber = (page ?? 1);
+            return View(autoUsados.ToPagedList(pageNumber, pageSize));
+
         }
 
         // GET: AutoUsados/Details/5
@@ -44,13 +83,14 @@ namespace eAuto.Controllers
             ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutos, "IdEstadoAuto", "NombreEstado");
             ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca");
             ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo");
+            //ViewBag.IdUsuario = new SelectList(db.Usuarios, "IdUsuario", "Nombre");
             return View();
         }
 
         // POST: AutoUsados/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost,ActionName("Create")]
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost, ActionName("Create")]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "IdAutoUsado,IdMarca,IdModelo,IdUsuario,IdEstadoAuto,IdColor,Precio,Descripcion,Km,ImagenPath")] AutoUsado autoUsado, HttpPostedFileBase FilePath)
         {
@@ -63,7 +103,6 @@ namespace eAuto.Controllers
                     autoUsado.ImagenPath = filename;
                     FilePath.SaveAs(path);
                 }
-                Session["NombreUsuario"] = 
                 db.AutoUsados.Add(autoUsado);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -73,6 +112,7 @@ namespace eAuto.Controllers
             ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutos, "IdEstadoAuto", "NombreEstado", autoUsado.IdEstadoAuto);
             ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", autoUsado.IdMarca);
             ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo", autoUsado.IdModelo);
+            //ViewBag.IdUsuario = new SelectList(db.Usuarios, "IdUsuario", "Nombre", autoUsado.IdUsuario);
             return View(autoUsado);
         }
 
@@ -92,12 +132,13 @@ namespace eAuto.Controllers
             ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutos, "IdEstadoAuto", "NombreEstado", autoUsado.IdEstadoAuto);
             ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", autoUsado.IdMarca);
             ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo", autoUsado.IdModelo);
+            ViewBag.IdUsuario = new SelectList(db.Usuarios, "IdUsuario", "Nombre", autoUsado.IdUsuario);
             return View(autoUsado);
         }
 
         // POST: AutoUsados/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "IdAutoUsado,IdMarca,IdModelo,IdUsuario,IdEstadoAuto,IdColor,Precio,Descripcion,Km,ImagenPath")] AutoUsado autoUsado)
@@ -112,6 +153,7 @@ namespace eAuto.Controllers
             ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutos, "IdEstadoAuto", "NombreEstado", autoUsado.IdEstadoAuto);
             ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", autoUsado.IdMarca);
             ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo", autoUsado.IdModelo);
+            ViewBag.IdUsuario = new SelectList(db.Usuarios, "IdUsuario", "Nombre", autoUsado.IdUsuario);
             return View(autoUsado);
         }
 
