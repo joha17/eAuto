@@ -1,0 +1,18 @@
+﻿@model eAuto.Models.Usuario
+
+@{
+    ViewBag.Title = "VerPerfil";
+}
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>Nombre: @Session["Nombre"].ToString()</h2>
+        
+        <strong>Apellidos: </strong><p>@Session["Apellidos"].ToString()</p>
+        <strong>Telefono: </strong><p>@Session["Telefono"].ToString()</p>
+        <strong>Direccion: </strong><p>@Session["Direccion"].ToString()</p>
+        <strong>Correo:</strong><p>@Session["Correo"].ToString()</p>
+        <br />
+        <a>@Html.ActionLink("Editar Datos", "Edit", new { id = Session["IdUsuario"] }, new { @class = "btn btn-warning" })</a>
+    </div>
+</div>

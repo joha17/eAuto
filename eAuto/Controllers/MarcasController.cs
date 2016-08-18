@@ -44,11 +44,11 @@ namespace eAuto.Controllers
         }
 
         // POST: Marcas/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdMarca,NombreMarca,IdPais")] Marca marca, string nombre)
+        public ActionResult Create([Bind(Include = "IdMarca,NombreMarca,IdPais")] Marca marca)
         {
             if (ModelState.IsValid)
             {
@@ -78,8 +78,8 @@ namespace eAuto.Controllers
         }
 
         // POST: Marcas/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "IdMarca,NombreMarca,IdPais")] Marca marca)

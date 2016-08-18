@@ -20,6 +20,7 @@ namespace eAuto.Models
         //Relaciones
         public virtual ICollection<AutoNuevo> AutosNuevos { get; set; }
         public virtual ICollection<AutoUsado> AutosUsados { get; set; }
+        public virtual ICollection<Modelo> Modelos { get; set; }
         public virtual Pais Pais { get; set; }
     }
 }

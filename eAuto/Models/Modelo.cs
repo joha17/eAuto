@@ -14,8 +14,11 @@ namespace eAuto.Models
         [Display(Name = "Modelo")]
         public string NombreModelo { get; set; }
 
+        public int IdMarca { get; set; }
+
         //Relaciones
         public virtual ICollection<AutoNuevo> AutosNuevos { get; set; }
         public virtual ICollection<AutoUsado> AutosUsados { get; set; }
+        public virtual Marca Marca { get; set; }
     }
 }

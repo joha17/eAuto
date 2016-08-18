@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace eAuto.Models
 {
@@ -50,5 +51,6 @@ namespace eAuto.Models
         public virtual Color Color { get; set; }
 
         public virtual Usuario Usuario { get; set; }
+        
     }
 }

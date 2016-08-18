@@ -210,7 +210,7 @@
     <Compile Include="Controllers\EstadoAutosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
-    <Compile Include="Controllers\ModeloesController.cs" />
+    <Compile Include="Controllers\ModelosController.cs" />
     <Compile Include="Controllers\PaisesController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -289,11 +289,6 @@
     <Content Include="Views\Agencias\Details.cshtml" />
     <Content Include="Views\Agencias\Edit.cshtml" />
     <Content Include="Views\Agencias\Index.cshtml" />
-    <Content Include="Views\Modeloes\Create.cshtml" />
-    <Content Include="Views\Modeloes\Delete.cshtml" />
-    <Content Include="Views\Modeloes\Details.cshtml" />
-    <Content Include="Views\Modeloes\Edit.cshtml" />
-    <Content Include="Views\Modeloes\Index.cshtml" />
     <Content Include="Views\EstadoAutos\Create.cshtml" />
     <Content Include="Views\EstadoAutos\Delete.cshtml" />
     <Content Include="Views\EstadoAutos\Details.cshtml" />
@@ -309,11 +304,6 @@
     <Content Include="Views\Paises\Details.cshtml" />
     <Content Include="Views\Paises\Edit.cshtml" />
     <Content Include="Views\Paises\Index.cshtml" />
-    <Content Include="Views\Marcas\Create.cshtml" />
-    <Content Include="Views\Marcas\Delete.cshtml" />
-    <Content Include="Views\Marcas\Details.cshtml" />
-    <Content Include="Views\Marcas\Edit.cshtml" />
-    <Content Include="Views\Marcas\Index.cshtml" />
     <Content Include="Views\AutoNuevos\Create.cshtml" />
     <Content Include="Views\AutoNuevos\Delete.cshtml" />
     <Content Include="Views\AutoNuevos\Details.cshtml" />
@@ -329,6 +319,18 @@
     <Content Include="Views\AutoUsados\Edit.cshtml" />
     <Content Include="Views\AutoUsados\Index.cshtml" />
     <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Usuario\VerPerfil.cshtml" />
+    <Content Include="Views\Modelos\Create.cshtml" />
+    <Content Include="Views\Modelos\Delete.cshtml" />
+    <Content Include="Views\Modelos\Details.cshtml" />
+    <Content Include="Views\Modelos\Edit.cshtml" />
+    <Content Include="Views\Modelos\Index.cshtml" />
+    <Content Include="Views\Marcas\Create.cshtml" />
+    <Content Include="Views\Marcas\Delete.cshtml" />
+    <Content Include="Views\Marcas\Details.cshtml" />
+    <Content Include="Views\Marcas\Edit.cshtml" />
+    <Content Include="Views\Marcas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -18,8 +18,10 @@ namespace eAuto.Models
         public string Apellidos { get; set; }
 
         [Phone]
+        [Required]
         public string Telefono { get; set; }
 
+        [Required]
         public string Direccion { get; set; }
 
         public bool Admin { get ; set; }

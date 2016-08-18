@@ -4,11 +4,11 @@
     ViewBag.Title = "Delete";
 }
 
-@if ((bool)Session["Admin"] == true)
+@if ((bool)Session["Admin"] == true || Convert.ToInt32(Session["IdUsuario"]) == Model.IdUsuario)
 {
     <h2>Delete</h2>
 
-    <h3>Are you sure you want to delete this?</h3>
+    <h3>Estas seguro que deseas eliminar este anuncio</h3>
     <div>
         <h4>AutoUsado</h4>
         <hr />
@@ -92,8 +92,8 @@
             @Html.AntiForgeryToken()
 
             <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
+                <input type="submit" value="Eliminar" class="btn btn-default" /> |
+                @Html.ActionLink("Devolver a Anuncios", "Index", null, new { @class = "btn btn-default"})
             </div>
         }
     </div>
@@ -103,6 +103,6 @@
 else
 {
     <h2>No estas autorizado para eliminar este anuncio.</h2>
-    <p>@Html.ActionLink("Back to List", "Index")</p>
+    <p>@Html.ActionLink("Devolver a Anuncios", "Index", null, new { @class = "btn btn-default" })</p>
 }
 

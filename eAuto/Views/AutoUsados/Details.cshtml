@@ -9,7 +9,7 @@
     <div class="container">
         <h2>Marca: @Html.DisplayFor(model => model.Marca.NombreMarca)</h2>
         <br />
-        <img src="~/Imagenes/AutosUsados/@Html.DisplayFor(model =>model.ImagenPath)" />
+        <img src="~/Imagenes/AutosUsados/@Html.DisplayFor(model => model.ImagenPath)" />
         <br />
         <strong>@Html.DisplayNameFor(model => model.Modelo.NombreModelo): </strong><p> @Html.DisplayFor(model => model.Modelo.NombreModelo)</p>
         <strong>@Html.DisplayNameFor(model => model.Precio): </strong><p> @Html.DisplayFor(model => model.Precio)</p>
@@ -23,7 +23,18 @@
         <strong>@Html.DisplayNameFor(model => model.Usuario.Apellidos): </strong><p> @Html.DisplayFor(model => model.Usuario.Apellidos)</p>
         <strong>@Html.DisplayNameFor(model => model.Usuario.Telefono): </strong><p> @Html.DisplayFor(model => model.Usuario.Telefono)</p>
         <br />
-            <a>@Html.ActionLink("Edit", "Edit", new { id = Model.IdAutoUsado }, new { @class = "btn btn-warning"})</a>
+        @if (Session["IdUsuario"] == null)
+        {
             <a>@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })</a>
+        }
+        else
+        {
+            if ((bool)Session["Admin"] == true || Convert.ToInt32(Session["IdUsuario"]) == Model.IdUsuario )
+            {
+                <a>@Html.ActionLink("Edit", "Edit", new { id = Model.IdAutoUsado }, new { @class = "btn btn-warning" })</a>
+                <a>@Html.ActionLink("Eliminar", "Delete", new { id = Model.IdAutoUsado }, new { @class = "btn btn-danger" })</a>
+            }
+        }
+
     </div>
 </div>

@@ -12,7 +12,7 @@
 @if (Session["IdUsuario"] != null)
 {
     <a>
-        @Html.ActionLink("Agregar Anuncio", "Create", null, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Agregar Anuncio", "Create", null, new { @class = "btn btn-success" })
     </a>
 }
 
@@ -50,12 +50,8 @@
                     <strong>Modelo</strong><p>@article.Modelo.NombreModelo</p>
                     <strong>Precio</strong><p>@article.Precio</p>
                     <strong>Descripcion: </strong><p>@article.Descripcion</p>
-                    @if (Session["IdUsuario"] != null)
-                    {
-                        <a>@Html.ActionLink("Eliminar", "Delete", new { id = article.IdAutoUsado }, new { @class = "btn btn-danger" })</a>
-                        <a>@Html.ActionLink("Editar", "Edit", new { id = article.IdAutoUsado }, new { @class = "btn btn-warning" })</a>
-                    }
-                        <a>@Html.ActionLink("Ver", "Details", new { id = article.IdAutoUsado }, new { @class = "btn btn-success" })</a>
+                    
+                    <a>@Html.ActionLink("Ver", "Details", new { id = article.IdAutoUsado }, new { @class = "btn btn-primary" })</a>
                 </div>
             </div>
         </div>

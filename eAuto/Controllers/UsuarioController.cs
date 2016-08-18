@@ -23,6 +23,26 @@ namespace eAuto.Controllers
             return View(db.Usuarios.ToList());
         }
 
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Usuario usuario = db.Usuarios.Find(id);
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuario);
+        }
+
+        public ActionResult VerPerfil()
+        {
+            
+            return View();
+        }
+
         public ActionResult Registro()
         {
             return View();
@@ -67,6 +87,10 @@ namespace eAuto.Controllers
             {
                 Session["IdUsuario"] = usr.IdUsuario.ToString();
                 Session["Correo"] = usr.Correo.ToString();
+                Session["Nombre"] = usr.Nombre.ToString();
+                Session["Apellidos"] = usr.Apellidos.ToString();
+                Session["Direccion"] = usr.Direccion.ToString();
+                Session["Telefono"] = usr.Telefono.ToString();
                 Session["Admin"] = usr.Admin;
                 return RedirectToAction("LoggedIn");
             }
@@ -90,10 +114,18 @@ namespace eAuto.Controllers
         }
 
         // GET: Paises/Edit/5
-        public ActionResult Edit()
+        public ActionResult Edit(int? id)
         {
-        
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Usuario usuario = db.Usuarios.Find(id);
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuario);
         }
 
         // POST: Paises/Edit/5
@@ -107,7 +139,7 @@ namespace eAuto.Controllers
             {
                 db.Entry(usuario).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("VerPerfil");
             }
             return View(usuario);
         }

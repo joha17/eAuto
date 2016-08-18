@@ -10,17 +10,18 @@ using eAuto.Models;
 
 namespace eAuto.Controllers
 {
-    public class ModeloesController : Controller
+    public class ModelosController : Controller
     {
         private eAutoContext db = new eAutoContext();
 
-        // GET: Modeloes
+        // GET: Modelos
         public ActionResult Index()
         {
-            return View(db.Modelos.ToList());
+            var modelos = db.Modelos.Include(m => m.Marca);
+            return View(modelos.ToList());
         }
 
-        // GET: Modeloes/Details/5
+        // GET: Modelos/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,18 +36,19 @@ namespace eAuto.Controllers
             return View(modelo);
         }
 
-        // GET: Modeloes/Create
+        // GET: Modelos/Create
         public ActionResult Create()
         {
+            ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca");
             return View();
         }
 
-        // POST: Modeloes/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Modelos/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdModelo,NombreModelo")] Modelo modelo)
+        public ActionResult Create([Bind(Include = "IdModelo,NombreModelo,IdMarca")] Modelo modelo)
         {
             if (ModelState.IsValid)
             {
@@ -55,10 +57,11 @@ namespace eAuto.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", modelo.IdMarca);
             return View(modelo);
         }
 
-        // GET: Modeloes/Edit/5
+        // GET: Modelos/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -70,15 +73,16 @@ namespace eAuto.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", modelo.IdMarca);
             return View(modelo);
         }
 
-        // POST: Modeloes/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Modelos/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdModelo,NombreModelo")] Modelo modelo)
+        public ActionResult Edit([Bind(Include = "IdModelo,NombreModelo,IdMarca")] Modelo modelo)
         {
             if (ModelState.IsValid)
             {
@@ -86,10 +90,11 @@ namespace eAuto.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", modelo.IdMarca);
             return View(modelo);
         }
 
-        // GET: Modeloes/Delete/5
+        // GET: Modelos/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +109,7 @@ namespace eAuto.Controllers
             return View(modelo);
         }
 
-        // POST: Modeloes/Delete/5
+        // POST: Modelos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
