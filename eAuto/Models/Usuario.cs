@@ -35,11 +35,13 @@ namespace eAuto.Models
         public string Contrasena { get; set; }
 
         [Display(Name = "Confirme su Contraseña")]
-        [Compare("Contrasena", ErrorMessage = "Confirm password doesn't match, Type again !")]
+        [Compare("Contrasena", ErrorMessage = "Confirme otra vez la contraseña. Digitela de nuevo.")]
         [DataType(DataType.Password)]
         public string ConfirmeContrasena { get; set; }
 
         public virtual ICollection<AutoUsado> AutoUsados { get; set; }
+
+        public virtual ICollection<AutoNuevo> AutoNuevos { get; set; }
 
         public Usuario()
         {

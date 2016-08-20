@@ -1,39 +1,64 @@
-﻿@model IEnumerable<eAuto.Models.Marca>
+﻿@model PagedList.IPagedList<eAuto.Models.Marca>
+@using PagedList.Mvc;
 
-@{
-    ViewBag.Title = "Index";
+@if (Session["IdUsuario"] != null && (bool)Session["Admin"] == true)
+{
+
+    {
+        ViewBag.Title = "Index";
+    }
+
+        <h2>Index</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+
+        using (Html.BeginForm("Index", "Marcas", FormMethod.Get))
+        {
+
+            <div class="form-group">
+                <label class="control-label">Busque su auto: </label>
+                <div class="input-group">
+                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Buscar</button>
+                    </span>
+                </div>
+            </div>
+
+        }
+
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.ActionLink("Marca", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    @Html.ActionLink("Pais", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreMarca)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pais.NombrePais)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.IdMarca }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.IdMarca }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.IdMarca })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <br />
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Pais.NombrePais)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NombreMarca)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pais.NombrePais)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreMarca)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdMarca }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdMarca }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdMarca })
-        </td>
-    </tr>
-}
-
-</table>

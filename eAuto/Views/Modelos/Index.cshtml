@@ -1,39 +1,47 @@
-﻿@model IEnumerable<eAuto.Models.Modelo>
+﻿@model PagedList.IPagedList<eAuto.Models.Modelo>
+@using PagedList.Mvc;
 
-@{
-    ViewBag.Title = "Index";
-}
+@if (Session["IdUsuario"] != null && (bool)Session["Admin"] == true)
+{
 
-<h2>Index</h2>
+    {
+        ViewBag.Title = "Index";
+    }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Marca.NombreMarca)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NombreModelo)
-        </th>
-        <th></th>
-    </tr>
+        <h2>Index</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Marca.NombreMarca)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreModelo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdModelo }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdModelo }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdModelo })
-        </td>
-    </tr>
-}
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.ActionLink("Modelo", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    @Html.ActionLink("Marca", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th></th>
+            </tr>
 
-</table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreModelo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marca.NombreMarca)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.IdModelo }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.IdModelo }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.IdModelo })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        }

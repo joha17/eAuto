@@ -1,4 +1,5 @@
-﻿@model IEnumerable<eAuto.Models.AutoNuevo>
+﻿@model PagedList.IPagedList<eAuto.Models.AutoNuevo>
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
@@ -12,6 +13,21 @@
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
+}
+
+@using (Html.BeginForm("Index", "AutoNuevos", FormMethod.Get))
+{
+
+    <div class="form-group">
+        <label class="control-label">Busque su auto: </label>
+        <div class="input-group">
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Buscar</button>
+            </span>
+        </div>
+    </div>
+
 }
 
 
@@ -31,9 +47,7 @@
                     <h3 id="thumbnail-label">@article.Marca.NombreMarca</h3>
                     <p>@article.Modelo.NombreModelo</p>
                     <p>@article.Descripcion</p>
-                    <a>@Html.ActionLink("Edit", "Edit", new { id = article.IdAutoNuevo })</a>
                     <a>@Html.ActionLink("Details", "Details", new { id = article.IdAutoNuevo })</a>
-                    <a>@Html.ActionLink("Delete", "Delete", new { id = article.IdAutoNuevo })</a>
 
                 </div>
             </div>
@@ -42,3 +56,8 @@
         counter++;
     }
 </div>
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

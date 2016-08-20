@@ -81,8 +81,8 @@ namespace eAuto.Controllers
         {
             ViewBag.IdColor = new SelectList(db.Colors, "IdColor", "NombreColor");
             ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutos, "IdEstadoAuto", "NombreEstado");
-            ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca");
-            ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo");
+            ViewBag.IdMarca = new SelectList(db.Marcas.OrderBy(x => x.NombreMarca), "IdMarca", "NombreMarca");
+            ViewBag.IdModelo = new SelectList(db.Modelos.OrderBy(x => x.NombreModelo), "IdModelo", "NombreModelo");
             //ViewBag.IdUsuario = new SelectList(db.Usuarios, "IdUsuario", "Nombre");
             return View();
         }
@@ -110,8 +110,8 @@ namespace eAuto.Controllers
 
             ViewBag.IdColor = new SelectList(db.Colors, "IdColor", "NombreColor", autoUsado.IdColor);
             ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutos, "IdEstadoAuto", "NombreEstado", autoUsado.IdEstadoAuto);
-            ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", autoUsado.IdMarca);
-            ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo", autoUsado.IdModelo);
+            ViewBag.IdMarca = new SelectList(db.Marcas.OrderBy(x => x.NombreMarca), "IdMarca", "NombreMarca", autoUsado.IdMarca);
+            ViewBag.IdModelo = new SelectList(db.Modelos.OrderBy(x => x.NombreModelo), "IdModelo", "NombreModelo", autoUsado.IdModelo);
             //ViewBag.IdUsuario = new SelectList(db.Usuarios, "IdUsuario", "Nombre", autoUsado.IdUsuario);
             return View(autoUsado);
         }
@@ -130,8 +130,8 @@ namespace eAuto.Controllers
             }
             ViewBag.IdColor = new SelectList(db.Colors, "IdColor", "NombreColor", autoUsado.IdColor);
             ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutos, "IdEstadoAuto", "NombreEstado", autoUsado.IdEstadoAuto);
-            ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", autoUsado.IdMarca);
-            ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo", autoUsado.IdModelo);
+            ViewBag.IdMarca = new SelectList(db.Marcas.OrderBy(x => x.NombreMarca), "IdMarca", "NombreMarca", autoUsado.IdMarca);
+            ViewBag.IdModelo = new SelectList(db.Modelos.OrderBy(x => x.NombreModelo), "IdModelo", "NombreModelo", autoUsado.IdModelo);
             ViewBag.IdUsuario = new SelectList(db.Usuarios, "IdUsuario", "Nombre", autoUsado.IdUsuario);
             return View(autoUsado);
         }
@@ -151,8 +151,8 @@ namespace eAuto.Controllers
             }
             ViewBag.IdColor = new SelectList(db.Colors, "IdColor", "NombreColor", autoUsado.IdColor);
             ViewBag.IdEstadoAuto = new SelectList(db.EstadoAutos, "IdEstadoAuto", "NombreEstado", autoUsado.IdEstadoAuto);
-            ViewBag.IdMarca = new SelectList(db.Marcas, "IdMarca", "NombreMarca", autoUsado.IdMarca);
-            ViewBag.IdModelo = new SelectList(db.Modelos, "IdModelo", "NombreModelo", autoUsado.IdModelo);
+            ViewBag.IdMarca = new SelectList(db.Marcas.OrderBy(x => x.NombreMarca), "IdMarca", "NombreMarca", autoUsado.IdMarca);
+            ViewBag.IdModelo = new SelectList(db.Modelos.OrderBy(x => x.NombreModelo), "IdModelo", "NombreModelo", autoUsado.IdModelo);
             ViewBag.IdUsuario = new SelectList(db.Usuarios, "IdUsuario", "Nombre", autoUsado.IdUsuario);
             return View(autoUsado);
         }

@@ -3,12 +3,12 @@
     ViewBag.Title = "LoggedIn";
 }
 
-<h2>LoggedIn</h2>
+<h2>Holaa!!</h2>
 
 @if (Session["IdUsuario"] != null)
 {
     <h4>
-        Bienvenido @Session["Correo"].ToString()
+        Bienvenido @Session["Nombre"].ToString() @Session["Apellidos"]
     </h4>
 }
 

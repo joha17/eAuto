@@ -1,33 +1,44 @@
-﻿@model IEnumerable<eAuto.Models.Pais>
+﻿@model PagedList.IPagedList<eAuto.Models.Pais>
+@using PagedList.Mvc;
+
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NombrePais)
-        </th>
-        <th></th>
-    </tr>
+@if (Session["IdUsuario"] != null && (bool)Session["Admin"] == true)
+{
+    <h2>Index</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombrePais)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdPais }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdPais }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdPais })
-        </td>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("Pais", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombrePais)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IdPais }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IdPais }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdPais })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 }
 
-</table>
+

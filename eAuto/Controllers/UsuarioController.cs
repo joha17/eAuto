@@ -1,12 +1,8 @@
 ﻿using eAuto.Models;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Security.Cryptography;
-using System.Text;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -58,6 +54,8 @@ namespace eAuto.Controllers
                 {
                     if (ModelState.IsValid)
                     {
+                        usuario.Contrasena = Seguridad.Encriptar(contrasena, Seguridad.Llave);
+                        usuario.ConfirmeContrasena = Seguridad.Encriptar(contrasena, Seguridad.Llave);
                         db.Usuarios.Add(usuario);
                         db.SaveChanges();
                         return RedirectToAction("Login");
@@ -80,25 +78,28 @@ namespace eAuto.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(Usuario usuario)
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(Usuario usuario,string contrasena)
         {
-            var usr = db.Usuarios.Where(u => u.Correo == usuario.Correo && u.Contrasena == usuario.Contrasena).FirstOrDefault();
-            if (usr != null)
-            {
-                Session["IdUsuario"] = usr.IdUsuario.ToString();
-                Session["Correo"] = usr.Correo.ToString();
-                Session["Nombre"] = usr.Nombre.ToString();
-                Session["Apellidos"] = usr.Apellidos.ToString();
-                Session["Direccion"] = usr.Direccion.ToString();
-                Session["Telefono"] = usr.Telefono.ToString();
-                Session["Admin"] = usr.Admin;
-                return RedirectToAction("LoggedIn");
-            }
-            else
-            {
-                ModelState.AddModelError("", "Correo o contrasena invalidos");
-            }
-            return View();
+            contrasena = Seguridad.Encriptar(usuario.Contrasena, Seguridad.Llave);
+                var usr = db.Usuarios.Where(u => u.Correo.Equals(usuario.Correo) && u.Contrasena.Equals(contrasena)).FirstOrDefault();
+                if (usr != null)
+                {
+                    Session["IdUsuario"] = usr.IdUsuario.ToString();
+                    Session["Correo"] = usr.Correo.ToString();
+                    Session["Nombre"] = usr.Nombre.ToString();
+                    Session["Apellidos"] = usr.Apellidos.ToString();
+                    Session["Direccion"] = usr.Direccion.ToString();
+                    Session["Telefono"] = usr.Telefono.ToString();
+                    Session["Admin"] = usr.Admin;
+                    return RedirectToAction("LoggedIn");
+                }
+                
+                else
+                {
+                    ModelState.AddModelError("", "Correo o contrasena invalidos");
+                }
+                return View();
         }
 
         public ActionResult LoggedIn()
@@ -133,10 +134,12 @@ namespace eAuto.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdUsuario,Nombre,Apellidos,Telefono,Direccion,Admin,Correo,Contrasena,ConfirmeContrasena")] Usuario usuario)
+        public ActionResult Edit([Bind(Include = "IdUsuario,Nombre,Apellidos,Telefono,Direccion,Admin,Correo,Contrasena,ConfirmeContrasena")] Usuario usuario, string contrasena)
         {
             if (ModelState.IsValid)
             {
+                usuario.Contrasena = Seguridad.Encriptar(contrasena, Seguridad.Llave);
+                usuario.ConfirmeContrasena = Seguridad.Encriptar(contrasena, Seguridad.Llave);
                 db.Entry(usuario).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("VerPerfil");

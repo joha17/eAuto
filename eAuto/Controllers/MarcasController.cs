@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using eAuto.Models;
+using PagedList;
 
 namespace eAuto.Controllers
 {
@@ -15,10 +16,48 @@ namespace eAuto.Controllers
         private eAutoContext db = new eAutoContext();
 
         // GET: Marcas
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            var marcas = db.Marcas.Include(m => m.Pais);
-            return View(marcas.ToList());
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var marcas = from s in db.Marcas
+                             select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                marcas = marcas.Where(s => s.NombreMarca.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    marcas = marcas.OrderByDescending(s => s.NombreMarca);
+                    break;
+                case "Date":
+                    marcas = marcas.OrderBy(s => s.Pais.NombrePais);
+                    break;
+                case "date_desc":
+                    marcas = marcas.OrderByDescending(s => s.Pais.NombrePais);
+                    break;
+                default:  // Name ascending 
+                    marcas = marcas.OrderBy(s => s.NombreMarca);
+                    break;
+            }
+
+            int pageSize = 12;
+            int pageNumber = (page ?? 1);
+            return View(marcas.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Marcas/Details/5

@@ -31,5 +31,7 @@ namespace eAuto.Models
         public virtual Modelo Modelo { get; set; }
 
         public virtual Agencia Agencia { get; set; }
+
+        public virtual Usuario Usuario { get; set; }
     }
 }

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using eAuto.Models;
+using PagedList;
 
 namespace eAuto.Controllers
 {
@@ -15,9 +16,43 @@ namespace eAuto.Controllers
         private eAutoContext db = new eAutoContext();
 
         // GET: Paises
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(db.Pais.ToList());
+
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var marcas = from s in db.Pais
+                         select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                marcas = marcas.Where(s => s.NombrePais.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    marcas = marcas.OrderByDescending(s => s.NombrePais);
+                    break;
+                default:  // Name ascending 
+                    marcas = marcas.OrderBy(s => s.NombrePais);
+                    break;
+            }
+
+            int pageSize = 12;
+            int pageNumber = (page ?? 1);
+            return View(marcas.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Paises/Details/5

@@ -15,7 +15,7 @@ namespace eAuto.Controllers
         private eAutoContext db = new eAutoContext();
 
         // GET: Agencias
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
             return View(db.Agencias.ToList());
         }

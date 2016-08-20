@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using eAuto.Models;
 using System.IO;
+using PagedList;
 
 namespace eAuto.Controllers
 {
@@ -16,10 +17,49 @@ namespace eAuto.Controllers
         private eAutoContext db = new eAutoContext();
 
         // GET: AutoNuevos
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            var autoNuevos = db.AutoNuevos.Include(a => a.Agencia).Include(a => a.Marca).Include(a => a.Modelo);
-            return View(autoNuevos.ToList());
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var autoNuevos = from s in db.AutoNuevos
+                             select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                autoNuevos = autoNuevos.Where(s => s.Marca.NombreMarca.Contains(searchString)
+                                       || s.Modelo.NombreModelo.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    autoNuevos = autoNuevos.OrderByDescending(s => s.Marca.NombreMarca);
+                    break;
+                case "Date":
+                    autoNuevos = autoNuevos.OrderBy(s => s.Modelo.NombreModelo);
+                    break;
+                case "date_desc":
+                    autoNuevos = autoNuevos.OrderByDescending(s => s.Modelo.NombreModelo);
+                    break;
+                default:  // Name ascending 
+                    autoNuevos = autoNuevos.OrderBy(s => s.Marca.NombreMarca);
+                    break;
+            }
+
+            int pageSize = 12;
+            int pageNumber = (page ?? 1);
+            return View(autoNuevos.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: AutoNuevos/Details/5
